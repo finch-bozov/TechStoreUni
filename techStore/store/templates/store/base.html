@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>Основи на програмирането с Python - Tech Store 2026</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/baseStyle.css' %}">
+</head>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h4>Categories</h4>
+
+    <a href="/">All Products</a>
+    <a href="/?category=laptops">Laptops</a>
+    <a href="/?category=phones">Phones</a>
+    <a href="/?category=accessories">Accessories</a>
+    <a href="/cart/" class="cart-link">
+    🛒 Cart
+    {% if cart_count > 0 %}
+        <span class="cart-badge">{{ cart_count }}</span>
+    {% endif %}
+    </a>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+    <button class="btn btn-sm btn-outline-light" onclick="toggleTheme()">
+            🌗 Theme
+    </button>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="brand">Основи на програмирането с Python - Tech Store 2026</div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <form method="GET" action="/" class="d-flex">
+            <input
+                type="text"
+                name="search"
+                class="form-control form-control-sm me-2"
+                placeholder="Search products..."
+            >
+            <button class="btn btn-sm btn-primary">Search</button>
+        </form>
+        </div>
+    </div>
+
+    {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- FOOTER -->
+    <footer>
+        2026 Tech Store<br>
+        Author: Peter Bozov (кнз-239)
+    </footer>
+
+</div>
+
+<script>
+function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute("data-theme");
+    html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+[
+{
+    "model": "store.product",
+    "pk": 9,
+    "fields": {
+        "name": "iPhone 17",
+        "description": "iPhone 17 - Base",
+        "price": "600.00",
+        "image": "",
+        "stock": 20,
+        "category": "phones"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 10,
+    "fields": {
+        "name": "iPhone 17 Pro",
+        "description": "iPhone 17 Pro",
+        "price": "999.00",
+        "image": "",
+        "stock": 15,
+        "category": "phones"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 11,
+    "fields": {
+        "name": "iPhone 17 Pro Max",
+        "description": "MAX!",
+        "price": "1299.00",
+        "image": "",
+        "stock": 5,
+        "category": "phones"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 12,
+    "fields": {
+        "name": "APPLE MacBook NEO 13\"",
+        "description": "APPLE MacBook NEO 13\"",
+        "price": "689.00",
+        "image": "",
+        "stock": 15,
+        "category": "laptops"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 13,
+    "fields": {
+        "name": "ASUS ProArt HN7306EAC-LX041X 13.3\"",
+        "description": "ASUS ProArt HN7306EAC-LX041X 13.3\"",
+        "price": "4449.00",
+        "image": "",
+        "stock": 3,
+        "category": "laptops"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 14,
+    "fields": {
+        "name": "ASUS Vivobook Go 15 E1504FA-BQ2339 15.6\"",
+        "description": "ASUS Vivobook Go 15 E1504FA-BQ2339 15.6\"",
+        "price": "347.00",
+        "image": "",
+        "stock": 50,
+        "category": "laptops"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 15,
+    "fields": {
+        "name": "Apple Charger",
+        "description": "Apple Charger",
+        "price": "70.00",
+        "image": "",
+        "stock": 45,
+        "category": "accessories"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 16,
+    "fields": {
+        "name": "Laptop Charger",
+        "description": "Laptop Charger",
+        "price": "50.00",
+        "image": "",
+        "stock": 50,
+        "category": "accessories"
+    }
+}
+]

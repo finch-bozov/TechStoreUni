@@ -1,0 +1,78 @@
+{% extends "store/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<h2 class="mb-4">Cart:</h2>
+
+{% if products %}
+    <div class="card shadow-sm">
+
+        {% for product in products %}
+            <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+                <!-- Product Info -->
+                <div>
+                    <h5 class="mb-1">{{ product.name }}</h5>
+                    <small class="text-muted">
+                        ${{ product.price }} × {{ product.quantity }}
+                    </small>
+                </div>
+
+                <!-- Quantity Controls -->
+                <div class="d-flex align-items-center gap-2">
+                    <a href="{% url 'decrease_qty' product.id %}" 
+                       class="btn btn-sm btn-outline-secondary">
+                        −
+                    </a>
+
+                    <span class="fw-bold">{{ product.quantity }}</span>
+
+                    <a href="{% url 'increase_qty' product.id %}" 
+                       class="btn btn-sm btn-outline-secondary">
+                        +
+                    </a>
+
+                    <a href="{% url 'remove_item' product.id %}" 
+                       class="btn btn-sm btn-danger">
+                        ✕
+                    </a>
+                </div>
+
+                <!-- Total Price -->
+                <div>
+                    <strong>${{ product.total_price }}</strong>
+                </div>
+            </div>
+        {% endfor %}
+
+        <!-- Cart Summary -->
+        <div class="pt-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h4>Total:</h4>
+                <h4>${{ total }}</h4>
+            </div>
+
+            <div class="d-flex gap-2 mt-3">
+                <a href="{% url 'clear_cart' %}" class="btn btn-outline-danger">
+                    Clear Cart
+                </a>
+
+                <a href="{% url 'checkout' %}" class="btn btn-success">
+                    Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% else %}
+    <div class="text-center mt-5">
+        <h4>Cart is empty!</h4>
+        <a href="/" class="btn btn-primary mt-3">
+            Browse Products
+        </a>
+    </div>
+{% endif %}
+
+</div>
+
+{% endblock %}

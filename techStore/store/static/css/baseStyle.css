@@ -1,0 +1,150 @@
+/* THEME SYSTEM */
+:root {
+    --bg: #7A7A7A;
+    --text: #f5f5f5;
+    --card: #3B3B3B;
+    --footer: #111;
+    --footer-text: #fff;
+}
+
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #f5f5f5;
+    --card: #1e1e1e;
+    --footer: #000;
+    --footer-text: #ccc;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Transitional animation for theme change */
+body, .card, .sidebar {
+    transition: all 0.3s ease;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.theme-toggle button {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+}
+
+/* TOP BAR */
+.topbar {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* SMALLER CARDS */
+.card {
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background: #1e1e1e;
+    display: block;
+}
+
+/* FOOTER */
+footer {
+    background: var(--footer);
+    color: var(--footer-text);
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: var(--card);
+    color: var(--text);
+    padding: 20px;
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+.content {
+    margin-left: 240px;
+    padding: 30px;
+    position: relative;
+}
+
+.sidebar a {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* Overriding defaults */
+.btn {
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+.badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+/* Search button styling */
+input.form-control {
+    border-radius: 10px;
+}
+
+.search-container {
+    width: 375px;
+    margin: 10px auto 0 auto;
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 0 2px rgba(79,70,229,0.3);
+    border-color: #4f46e5;
+    border-radius: 20px;
+    padding-left: 15px;
+}
+
+.topbar form {
+    max-width: 300px;
+    width: 100%;
+}
